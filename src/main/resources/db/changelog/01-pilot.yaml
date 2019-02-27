@@ -1,0 +1,29 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: danielsire
+      changes:
+        - createTable:
+            tableName: pilot
+            columns:
+              - column:
+                  name: id
+                  type: serial
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2
+      author: danielsire
+      changes:
+      - sql:
+          sql: insert into pilot (name) values ('Joe');
+               insert into pilot (name) values ('Pete');
+      - rollback:
+          sql: delete from pilot;
+                  

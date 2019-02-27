@@ -1,0 +1,32 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 3
+      author: danielsire
+      changes:
+        - createTable:
+            tableName: aircraft
+            columns:
+              - column:
+                  name: serial_number
+                  type: varchar(10)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: tail_number
+                  type: varchar(6)
+              - column:
+                  name: model
+                  type: varchar(255)
+
+  - changeSet:
+      id: 4
+      author: danielsire
+      changes:
+        - sql:
+            sql: insert into aircraft (serial_number, tail_number, model) values ('4444444444', 'PQ-PET', 'ERJ-145');
+                 insert into aircraft (serial_number, tail_number, model) values ('5555555555', 'PP-POT', 'ERJ-135');
+        - rollback:
+            sql: delete from aircraft;
+                  
