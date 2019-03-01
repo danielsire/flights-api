@@ -1,0 +1,12 @@
+databaseChangeLog:
+
+  - include:
+      file: 01-pilot.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 02-aircraft.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 03-flight.yaml
+      relativeToChangelogFile: true
+  
