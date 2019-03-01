@@ -62,12 +62,11 @@ public class Flight implements Serializable {
     private Pilot pilot;
     
     @NonNull
-    @JoinColumn(name = "departure_airport")
+    @Column(name = "departure_airport")
     private String departureAirport;
 
     @NonNull
-    @JoinColumn(name = "arrival_airport")
-    @ManyToOne
+    @Column(name = "arrival_airport")
     private String arrivalAirport;
 	
 }
