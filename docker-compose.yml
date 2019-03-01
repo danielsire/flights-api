@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: flights_api_db
+    image: postgres:11.1-alpine
+    environment:
+      POSTGRES_USER: flights
+      POSTGRES_PASSWORD: flights
+      POSTGRES_DB: flights
+    volumes:
+       - ~/storage/shorturl/postgres:/data/postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - flights
+    restart: always
+
+networks:
+  flights:
+    driver: bridge
