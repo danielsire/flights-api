@@ -15,6 +15,9 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
+                  name: flight_code
+                  type: varchar(10)
+              - column:
                   name: status
                   type: varchar(20)
               - column:
@@ -49,10 +52,10 @@ databaseChangeLog:
       author: danielsire
       changes:
         - sql:
-            sql: insert into flight (status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('SCHEDULED', '2019-02-12T12:00:00Z', '2019-02-13T10:00:00Z', '4444444444', (select id from pilot where name = 'Joe'), 'GRU', 'SDU');
-                 insert into flight (status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('DEPARTED', '2019-02-01T12:00:00Z', '2019-02-02T10:00:00Z', '5555555555', (select id from pilot where name = 'Pete'), 'GRU', 'BSB');
-                 insert into flight (status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('ARRIVED', '2019-01-14T12:00:00Z', '2019-01-15T10:00:00Z', '5555555555', (select id from pilot where name = 'Pete'), 'VCP', 'POA');
-                 insert into flight (status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('CANCELLED', '2019-02-26T12:00:00Z', '2019-02-27T10:00:00Z', '4444444444', (select id from pilot where name = 'Joe'), 'BHZ', 'CGH');
+            sql: insert into flight (flight_code, status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('ruy60nhg1h', 'SCHEDULED', '2019-02-12T12:00:00Z', '2019-02-13T10:00:00Z', '4444444444', (select id from pilot where name = 'Joe'), 'GRU', 'SDU');
+                 insert into flight (flight_code, status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('slks9ea7ri', 'DEPARTED', '2019-02-01T12:00:00Z', '2019-02-02T10:00:00Z', '5555555555', (select id from pilot where name = 'Pete'), 'GRU', 'BSB');
+                 insert into flight (flight_code, status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('krjg8klx23', 'ARRIVED', '2019-01-14T12:00:00Z', '2019-01-15T10:00:00Z', '5555555555', (select id from pilot where name = 'Pete'), 'VCP', 'POA');
+                 insert into flight (flight_code, status, departure_date, arrival_date, aircraft, pilot, departure_airport, arrival_airport) values ('v5tniybrd1', 'CANCELLED', '2019-02-26T12:00:00Z', '2019-02-27T10:00:00Z', '4444444444', (select id from pilot where name = 'Joe'), 'BHZ', 'CGH');
         - rollback:
             sql: delete from flight;
            

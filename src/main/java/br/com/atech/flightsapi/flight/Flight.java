@@ -38,6 +38,10 @@ public class Flight implements Serializable {
 	private Long id;
 	
 	@NonNull
+    @Column(name = "flight_code")
+    private String flightCode;
+	
+	@NonNull
 	@Enumerated(EnumType.STRING)
 	private Status status;
 
@@ -52,6 +56,14 @@ public class Flight implements Serializable {
     private Date arrivalDate;
 
     @NonNull
+    @Column(name = "departure_airport")
+    private String departureAirport;
+    
+    @NonNull
+    @Column(name = "arrival_airport")
+    private String arrivalAirport;
+
+    @NonNull
     @JoinColumn(name = "aircraft")
     @ManyToOne
     private Aircraft aircraft;
@@ -61,12 +73,4 @@ public class Flight implements Serializable {
     @ManyToOne
     private Pilot pilot;
     
-    @NonNull
-    @Column(name = "departure_airport")
-    private String departureAirport;
-
-    @NonNull
-    @Column(name = "arrival_airport")
-    private String arrivalAirport;
-	
 }
