@@ -9,9 +9,9 @@ services:
       POSTGRES_PASSWORD: flights
       POSTGRES_DB: flights
     volumes:
-       - ~/storage/shorturl/postgres:/data/postgres
+       - ~/storage/flights/postgres:/data/postgres
     ports:
-      - "5433:5432"
+      - "5434:5432"
     networks:
       - flights
     restart: always
