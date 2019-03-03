@@ -1,5 +1,5 @@
 server:
-  contextPath: /url-shortener
+  contextPath: /api
   port: 8081
     
 spring:
@@ -14,12 +14,13 @@ spring:
 spring: 
   profiles: local    
   datasource:
+    platform: postgres
     driver: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/flights
+    url: jdbc:postgresql://localhost:5434/flights
     username: flights
-    password: flights    
+    password: flights
   jpa:
-    database: postgresql
+    database: POSTGRESQL
     show-sql: true
     hibernate.ddl-auto: none
  
