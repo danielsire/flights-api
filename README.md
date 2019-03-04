@@ -12,4 +12,4 @@ Tomcat will start on port *8081*
 
 ### Swagger - API Documentation
 
-Access `http://localhost:8081/api/swagger-ui.html`
+Access `http://localhost:8081/swagger-ui.html`
